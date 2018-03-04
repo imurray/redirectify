@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Redirectify",
+  "version": "0.1",
+
+  "description": "Redirects some URLs. This first version hard-codes redirect requests to PDFs of papers at some popular sites to the HTML index page.",
+
+  "homepage_url": "https://github.com/imurray/redirectify",
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["redirectify.js"]
+  }
+
+}
