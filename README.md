@@ -51,5 +51,5 @@ code. To run the extension from the source:
   unpacked extension and select the `src` directory. See [Chrome's
   extension development getting started
   guide](https://developer.chrome.com/extensions/getstarted) for more
-  details. I've found the Chrome documentation and API harder to work with than Firefox's. Also the Chrome webstore makes you pay to register as a developer and is less responsive, for casual development that's a big turn-off.
+  details. I've found the Chrome documentation and API harder to work with than Firefox's. Also the Chrome webstore makes you pay to register as a developer and is less responsive, which is a turn-off for casual development.
 

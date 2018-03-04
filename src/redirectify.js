@@ -5,10 +5,10 @@
 // index page from where clicking on the PDF will work.
 //
 // Each rule contains: [urlMatch, pattern, replace, (optional) bypassDomain]
-// urlMatch in format https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns
-// pattern+replace are used for regex rewriting of the URL unless request
-// initiated at a subdomain of bypassDomain or same domain as URL if
-// bypassDomain is missing.
+// - urlMatch is in format https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns
+// - pattern and replace are used for regex rewriting of the URL
+// - rewriting is abandonded if a request is initiated at a subdomain of
+//   bypassDomain, or from the same domain as the requested URL.
 //
 // Iain Murray, March 2018.
 
@@ -41,6 +41,7 @@ function fix(request, pattern, replacement, bypassDomain) {
 
 RULES.forEach(rule => browser.webRequest.onBeforeRequest.addListener(
   request => fix(request, rule[1], rule[2], rule[3]),
-  {urls: [rule[0]], types: ["main_frame", "sub_frame"]},
+  {urls: [rule[0]],
+  types: ["main_frame", "sub_frame"]},
   ["blocking"]));
 
