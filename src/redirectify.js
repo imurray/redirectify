@@ -27,7 +27,6 @@ RULES = [
 var browser = browser || chrome;
 
 function fix(request, pattern, replacement, bypassDomain) {
-  console.log(request);
   // 2018-03-04: request.initiator below is for Chrome, which doesn't have originUrl.
   //             Unfortunately .initiator is missing for new tabs, so in Chrome
   //             middle-clicking a PDF link on arXiv opens the abstract page.
