@@ -44,8 +44,8 @@ code. To run the extension from the source:
 
 * Firefox: go to `about:debugging` and click "Load Temporary Add-on".
   Select either of the files in the `src` directory. See [Mozilla's
-  WebExtensions documentation](https://developer.mozilla.org/en-US
-  /Add-ons/WebExtensions) for more details.
+  WebExtensions documentation](https://developer.mozilla.org/en-US/Add-ons/WebExtensions)
+  for more details.
 
 * Chrome: go to `chrome://extensions` check developer mode, click load
   unpacked extension and select the `src` directory. See [Chrome's
