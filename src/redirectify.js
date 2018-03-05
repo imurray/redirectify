@@ -21,7 +21,8 @@ RULES = [
   ["*://*.jmlr.org/*", /papers\/volume(.*)\/[^\/]*.pdf$/, '/papers/v$1.html'],
   ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
     'https://dl.acm.org/citation.cfm?id=$1', '.acm.org'],
-  ["*://papers.nips.cc/*", /\.pdf$/, '']
+  ["*://papers.nips.cc/*", /\.pdf$/, ''],
+  ["*://*biorxiv.org/*", /(.*)\/biorxiv\/(.*?)(.full.pdf)?$/, '$1/$2']
 ];
 
 var browser = browser || chrome;
