@@ -22,11 +22,6 @@ I've given the extension a fairly generic name. The redirect rules are stored in
 a list at the top of the code, and can easily be added to. However, making this
 list updatable within the extension has been punted to future work.
 
-The code is written as a WebExtension, originally for Firefox. It works nearly
-as well from the same code in Chrome. It could probably be made to work in some
-other browsers, perhaps with some tweaking. But not by me.
-
-
 ## Download
 
 If you just want to use the extension as it is, get it from one of the official addon
@@ -36,6 +31,14 @@ sites:
 
 * [Redirectify for Chrome](https://chrome.google.com/webstore/detail/redirectify/mhjmbfadcbhilcfdhkkepffbnjaghfie)
 
+
+## Alternatives
+
+* [arxiv-url-replacer](https://github.com/jithurjacob/arxiv-url-replacer) a
+  different Chrome extension for arXiv, with a GUI. Edits links in pages, instead of
+  intercepting requests. A similar approach could be taken using
+  [TamperMonkey](https://tampermonkey.net/), which would immediately work in
+  multiple browsers. It can be tricky to catch all links though.
 
 ## Hacking
 
@@ -52,4 +55,8 @@ code. To run the extension from the source:
   extension development getting started
   guide](https://developer.chrome.com/extensions/getstarted) for more
   details. I've found the Chrome documentation and API harder to work with than Firefox's. Also the Chrome webstore makes you pay to register as a developer and is less responsive, which is a turn-off for casual development.
+
+The code is written as a WebExtension, originally for Firefox. It works nearly
+as well from the same code in Chrome. It could probably be made to work in some
+other browsers, perhaps with some tweaking. But not by me.
 
