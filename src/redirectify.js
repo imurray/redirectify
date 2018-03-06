@@ -5,7 +5,8 @@
 // index page from where clicking on the PDF will work.
 //
 // Each rule contains: [urlMatch, pattern, replace, (optional) bypassDomain]
-// - urlMatch is in format https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns
+// - urlMatch in format at:
+//   https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns
 // - pattern and replace are used for regex rewriting of the URL
 // - rewriting is abandonded if a request is initiated at a subdomain of
 //   bypassDomain, or from the same domain as the requested URL.
@@ -21,7 +22,8 @@ RULES = [
   ["*://*.jmlr.org/*", /papers\/volume(.*)\/[^\/]*.pdf$/, '/papers/v$1.html'],
   ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
     'https://dl.acm.org/citation.cfm?id=$1', '.acm.org'],
-  ["*://papers.nips.cc/*", /\.pdf$/, '']
+  ["*://papers.nips.cc/*", /\.pdf$/, ''],
+  ["*://*.biorxiv.org/*", /((.*)\/biorxiv|)(.*)(.full.pdf)$/, '$2$3']
 ];
 
 var browser = browser || chrome;
@@ -41,7 +43,6 @@ function fix(request, pattern, replacement, bypassDomain) {
 
 RULES.forEach(rule => browser.webRequest.onBeforeRequest.addListener(
   request => fix(request, rule[1], rule[2], rule[3]),
-  {urls: [rule[0]],
-  types: ["main_frame", "sub_frame"]},
+  {urls: [rule[0]], types: ["main_frame", "sub_frame"]},
   ["blocking"]));
 
