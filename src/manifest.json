@@ -2,16 +2,25 @@
 
   "manifest_version": 2,
   "name": "Redirectify",
-  "version": "0.1",
+  "version": "0.2",
 
-  "description": "Redirects some URLs. This first version hard-codes redirect requests to PDFs of papers at some popular sites to the HTML index page.",
+  "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages.",
 
   "homepage_url": "https://github.com/imurray/redirectify",
 
   "permissions": [
+    "*://*.arxiv.org/pdf/*",
+    "*://xxx.lanl.gov/pdf/*",
+    "*://arxiv-export-lb.library.cornell.edu/pdf/*",
+    "*://*.openreview.net/pdf*",
+    "*://proceedings.mlr.press/*.pdf",
+    "*://*.jmlr.org/papers/*.pdf",
+    "*://jmlr.csail.mit.edu/papers/*.pdf",
+    "*://delivery.acm.org/*",
+    "*://papers.nips.cc/*.pdf",
+    "*://*.biorxiv.org/content*",
     "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
+    "webRequestBlocking"
   ],
 
   "background": {
