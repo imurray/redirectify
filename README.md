@@ -41,6 +41,10 @@ sites:
   [TamperMonkey](https://tampermonkey.net/), which would immediately work in
   multiple browsers. It can be tricky to catch all links though.
 
+* [Allen.YL Lee](https://twitter.com/allenyllee) points out that
+  a bookmarklet could be used to escape from a PDF after the fact, and
+  [provides an example](https://gist.github.com/allenyllee/0c90341680459203df6453b5d60d28f2).
+
 ## Hacking
 
 If you want to add to the redirect rules, you currently have to edit the source
