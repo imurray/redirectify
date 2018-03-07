@@ -9,7 +9,7 @@ SRC=src
 cd $(dirname $(readlink -m "$0"))
 
 VERSION=$(grep '"version":' src/manifest.json | sed 's/.*"\([0-9.]*\)".*/\1/')
-OUT="$EXTENSION"-"$VERSION".xpi
+OUT="$EXTENSION"-"$VERSION".zip
 
 rm -f "$OUT"
 cd "$SRC"
