@@ -26,14 +26,15 @@ RULES = [
   ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
     'https://dl.acm.org/citation.cfm?id=$1', '.acm.org'],
   ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
-  ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3'],
   ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2',
-    '.semanticscholar.org']
+    '.semanticscholar.org'],
+  ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3']
 ];
 
 var browser = browser || chrome;
 
 function fix(request, pattern, replacement, bypassDomain) {
+  console.log(request);
   // 2018-03-04: request.initiator below is for Chrome, which doesn't have originUrl.
   //             Unfortunately .initiator is missing for new tabs, so in Chrome
   //             middle-clicking a PDF link on arXiv opens the abstract page.

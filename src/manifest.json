@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Redirectify",
-  "version": "0.2.2",
+  "version": "0.2.3",
 
   "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages.",
 
@@ -18,8 +18,8 @@
     "*://jmlr.csail.mit.edu/papers/*.pdf",
     "*://delivery.acm.org/*",
     "*://papers.nips.cc/*.pdf",
-    "*://*.biorxiv.org/content*",
     "*://pdfs.semanticscholar.org/*",
+    "*://*.biorxiv.org/content*",
     "webRequest",
     "webRequestBlocking"
   ],
