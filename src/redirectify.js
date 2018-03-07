@@ -20,13 +20,14 @@ RULES = [
   ["*://xxx.lanl.gov/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://arxiv-export-lb.library.cornell.edu/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://*.openreview.net/pdf*", /pdf\?id=/, 'forum?id='],
-  ["*://proceedings.mlr.press/*.pdf", /^(.*)\/[^\/]*\.pdf$/, '$1.html'],
+  ["*://proceedings.mlr.press/*.pdf", /^(.*mlr.press\/([^\/]*)\/)([^\/]*\/|)([^\/]*)\.pdf$/, '$1$4.html'],
   ["*://*.jmlr.org/papers/*.pdf", /papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://jmlr.csail.mit.edu/papers/*.pdf", /papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
     'https://dl.acm.org/citation.cfm?id=$1', '.acm.org'],
   ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
-  ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3']
+  ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3'],
+  ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2']
 ];
 
 var browser = browser || chrome;
