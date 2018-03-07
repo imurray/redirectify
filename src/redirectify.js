@@ -27,7 +27,8 @@ RULES = [
     'https://dl.acm.org/citation.cfm?id=$1', '.acm.org'],
   ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
   ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3'],
-  ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2']
+  ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2',
+    '.semanticscholar.org']
 ];
 
 var browser = browser || chrome;
