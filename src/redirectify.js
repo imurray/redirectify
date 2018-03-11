@@ -20,7 +20,7 @@ RULES = [
   ["*://xxx.lanl.gov/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://arxiv-export-lb.library.cornell.edu/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://*.openreview.net/pdf*", /pdf\?id=/, 'forum?id='],
-  ["*://proceedings.mlr.press/*.pdf", /^(.*mlr.press\/([^\/]*)\/)([^\/]*\/|)([^\/]*)\.pdf$/, '$1$4.html'],
+  ["*://proceedings.mlr.press/*.pdf", /^(.*mlr.press\/([^\/]*)\/)([^\/]*\/|)([^\/]*?)(-supp|Supple|)\.pdf$/, '$1$4.html'],
   ["*://*.jmlr.org/papers/*.pdf", /papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://jmlr.csail.mit.edu/papers/*.pdf", /papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
