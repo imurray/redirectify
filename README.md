@@ -7,7 +7,7 @@ available in the PDF, such as the version history. I've given up trying to ask
 people not to deep-link to PDFs, and have instead written a browser extension to
 do what I want.
 
-Install links: [Firefox](https://addons.mozilla.org/en-US/firefox/addon/redirectify/) and [Chrome](https://chrome.google.com/webstore/detail/redirectify/mhjmbfadcbhilcfdhkkepffbnjaghfie)
+Install link: [Firefox](https://addons.mozilla.org/en-US/firefox/addon/redirectify-cern/)
 
 This Firefox/Chrome extension redirects links to PDFs on arXiv, JMLR, NIPS,
 OpenReview and PMLR to an HTML index page, unless you clicked on the link from
@@ -27,17 +27,6 @@ I've given the extension a fairly generic name. The redirect rules are stored in
 a list at the top of the code, and can easily be added to. However, making this
 list updatable within the extension is unlikely to happen soon, partly because
 of time, partly because allowing any URL to be redirected opens up security issues.
-
-
-## Download
-
-If you just want to use the extension as it is, get it from one of the official addon
-sites:
-
-* [Redirectify for Firefox](https://addons.mozilla.org/en-US/firefox/addon/redirectify/)
-
-* [Redirectify for Chrome](https://chrome.google.com/webstore/detail/redirectify/mhjmbfadcbhilcfdhkkepffbnjaghfie)
-
 
 ## Alternatives
 
