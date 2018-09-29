@@ -1,0 +1,6 @@
+# ignore the generated extension files
+*.xpi
+*.zip
+
+# ignore temporary chrome thing
+*tmp_*/

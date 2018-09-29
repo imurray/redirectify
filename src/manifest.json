@@ -1,12 +1,12 @@
 {
 
   "manifest_version": 2,
-  "name": "Redirectify",
-  "version": "0.2.4",
+  "name": "Redirectify-CERN",
+  "version": "0.1.0",
 
-  "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages.",
+  "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages. This is a CERN-specific fork.",
 
-  "homepage_url": "https://github.com/imurray/redirectify",
+  "homepage_url": "https://github.com/dguest/redirectify",
 
   "permissions": [
     "*://*.arxiv.org/pdf/*",
@@ -20,6 +20,8 @@
     "*://papers.nips.cc/*.pdf",
     "*://pdfs.semanticscholar.org/*",
     "*://*.biorxiv.org/content*",
+    "*://indico.cern.ch/event/*/contributions/*/attachments/*.pdf",
+    "*://cds.cern.ch/record/*/files/*.pdf",
     "webRequest",
     "webRequestBlocking"
   ],
