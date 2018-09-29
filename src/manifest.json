@@ -20,6 +20,8 @@
     "*://papers.nips.cc/*.pdf",
     "*://pdfs.semanticscholar.org/*",
     "*://*.biorxiv.org/content*",
+    "*://indico.cern.ch/event/*/contributions/*/attachments/*.pdf",
+    "*://cds.cern.ch/record/*/files/*.pdf",
     "webRequest",
     "webRequestBlocking"
   ],

@@ -28,7 +28,9 @@ RULES = [
   ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
   ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2',
     '.semanticscholar.org'],
-  ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3']
+  ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3'],
+  ["*://indico.cern.ch/event/*/contributions/*/attachments/*.pdf", /(.*)\/contributions\/(.*)\/attachments\/.*/, '$1/contributions/$2'],
+  ["*://cds.cern.ch/record/*/files/*.pdf", /(.*)\/files\/.*/, '$1/files']
 ];
 
 var browser = browser || chrome;
