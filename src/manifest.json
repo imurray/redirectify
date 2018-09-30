@@ -24,7 +24,7 @@
     "*://papers.neurips.cc/*.pdf",
     "*://pdfs.semanticscholar.org/*",
     "*://*.biorxiv.org/content*",
-    "*://indico.cern.ch/event/*/contributions/*/attachments/*.pdf",
+    "*://indico.cern.ch/event/*/attachments/*.pdf",
     "*://cds.cern.ch/record/*/files/*.pdf",
     "webRequest",
     "webRequestBlocking"
