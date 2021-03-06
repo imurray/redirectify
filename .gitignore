@@ -1,0 +1,6 @@
+# generated extension files
+*.xpi
+*.zip
+
+# temporary chrome thing
+*tmp_*/
