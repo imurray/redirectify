@@ -21,8 +21,8 @@ RULES = [
   ["*://arxiv-export-lb.library.cornell.edu/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://*.openreview.net/pdf*", /pdf\?id=/, 'forum?id='],
   ["*://proceedings.mlr.press/*.pdf", /^(.*mlr.press\/([^\/]*)\/)([^\/]*\/|)([^\/]*?)(-supp|Supple|)\.pdf$/, '$1$4.html'],
-  ["*://*.jmlr.org/papers/*.pdf", /papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
-  ["*://jmlr.csail.mit.edu/papers/*.pdf", /papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
+  ["*://*.jmlr.org/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
+  ["*://jmlr.csail.mit.edu/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
     'https://dl.acm.org/citation.cfm?id=$1', '.acm.org'],
   ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
@@ -41,6 +41,7 @@ function fix(request, pattern, replacement, bypassDomain) {
   newHost = bypassDomain || new URL(request.url).hostname;
   if (! ('.' + oldHost).endsWith(newHost)) {
     newUrl = request.url.replace(pattern, replacement);
+    console.log('hello:', newUrl);
     if (newUrl != request.url)
       return { redirectUrl: newUrl };
   }
