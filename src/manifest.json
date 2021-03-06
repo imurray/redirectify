@@ -12,6 +12,7 @@
     "*://*.arxiv.org/pdf/*",
     "*://xxx.lanl.gov/pdf/*",
     "*://arxiv-export-lb.library.cornell.edu/pdf/*",
+    "*://arxiv.org/ftp/*pdf",
     "*://*.openreview.net/pdf*",
     "*://proceedings.mlr.press/*.pdf",
     "*://*.jmlr.org/papers/*.pdf",

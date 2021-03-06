@@ -19,6 +19,7 @@ RULES = [
   ["*://*.arxiv.org/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2', ['.inspirehep.net']],
   ["*://xxx.lanl.gov/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://arxiv-export-lb.library.cornell.edu/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
+  ["*://arxiv.org/ftp/*pdf", /.*arxiv()\/papers\/....\/(.*)\.pdf|.*\/([^\/]*\/)papers\/....\/([^.]*)\.pdf.*/, 'https://arxiv.org/abs/$1$2$3$4'],
   ["*://*.openreview.net/pdf*", /pdf\?id=/, 'forum?id='],
   ["*://proceedings.mlr.press/*.pdf", /^(.*mlr.press\/([^\/]*)\/)([^\/]*\/|)([^\/]*?)(-supp|Supple|)\.pdf$/, '$1$4.html'],
   ["*://*.jmlr.org/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
