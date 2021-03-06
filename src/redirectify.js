@@ -57,9 +57,8 @@ RULES = [
 var browser = browser || chrome;
 
 function fix(request, pattern, replacement, bypassDomain) {
-  // 2018-03-04: request.initiator below is for Chrome, which doesn't have originUrl.
-  //             Unfortunately .initiator is missing for new tabs, so in Chrome
-  //             middle-clicking a PDF link on arXiv opens the abstract page.
+  // 2021-03-06: request.initiator below is for Chrome, which doesn't have originUrl.
+  //             Unlike before, .initiator now works when opening new tabs and windows :-).
   oldHost = new URL(request.originUrl || request.initiator || 'http://example.com').hostname;
   bypassDomains = (bypassDomain || []).concat(new URL(request.url).hostname);
   console.log('foo:', request, pattern, replacement, bypassDomain);

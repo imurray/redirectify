@@ -94,9 +94,7 @@ code, please check both of the following in both Firefox and Chrome:
 * Each redirect ends up at an HTML page with a link to the PDF, and clicking
   that link does give the PDF.
 
-I've found the Chrome documentation and API harder to work with than Firefox's.
-Also, to upload extensions, the Chrome webstore makes you pay to register as a
-developer, which is a turn-off for casual development.
+If you add support for a new site, please add an example PDF URL to `test_cases`.
 
 At some point in 2021, before Google lock things down, I should probably make a
 version of the extension that can use Chrome's new Manifest 3 API. It looks
