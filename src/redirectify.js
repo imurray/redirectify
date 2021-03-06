@@ -23,8 +23,7 @@ RULES = [
   ["*://proceedings.mlr.press/*.pdf", /^(.*mlr.press\/([^\/]*)\/)([^\/]*\/|)([^\/]*?)(-supp|Supple|)\.pdf$/, '$1$4.html'],
   ["*://*.jmlr.org/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://jmlr.csail.mit.edu/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
-  ["*://delivery.acm.org/*", /.*delivery.acm.org\/[0-9.]*\/[0-9.]*\/([0-9]*)\/.*/,
-    'https://dl.acm.org/citation.cfm?id=$1', ['.acm.org']],
+  ["*://dl.acm.org/doi/pdf/*", /.*\/doi\/pdf\/([^\?#]*).*/, 'https://dl.acm.org/doi/$1', ['.acm.org']],
   ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
   ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2',
     ['.semanticscholar.org']],
@@ -39,6 +38,7 @@ function fix(request, pattern, replacement, bypassDomain) {
   //             middle-clicking a PDF link on arXiv opens the abstract page.
   oldHost = new URL(request.originUrl || request.initiator || 'http://example.com').hostname;
   bypassDomains = (bypassDomain || []).concat(new URL(request.url).hostname);
+  console.log('foo:', request, pattern, replacement, bypassDomain);
   if (! bypassDomains.some(x => ('.' + oldHost).endsWith(x))) {
     newUrl = request.url.replace(pattern, replacement);
     console.log('hello:', newUrl);

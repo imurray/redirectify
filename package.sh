@@ -17,11 +17,12 @@ cd "$SRC"
 zip -r -FS ../"$OUT".xpi *
 echo Created for firefox: "$OUT".xpi
 
-# Create .zip file for chrome, with some of the RULES removed, because they
-# cause problems:
+# Create .zip file for chrome, with COMMENTED OUT how I used to remove some
+# RULES that caused problems:
 mkdir -p "../tmp_chrome_version"
 for a in * ; do
-    cat $a | sed -e '/acm.org/d' -e '/semanticscholar/d' > "../tmp_chrome_version/$a"
+    #cat $a | sed -e '/acm.org/d' -e '/semanticscholar/d' > "../tmp_chrome_version/$a"
+    cat $a > "../tmp_chrome_version/$a"
 done
 cd "../tmp_chrome_version"
 zip -r -FS ../"$OUT".zip *
