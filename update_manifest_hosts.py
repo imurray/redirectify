@@ -14,7 +14,10 @@ hosts = []
 with open(os.path.join(DIR, 'redirectify.js'), 'r') as fid:
     for line in fid:
         if line.startswith('  ["*://'):
-            hosts.append(' '*4 + line[len('  ['):line.index(', /')+1] + '\n')
+            host_line = ' '*4 + line[len('  ['):line.index(', /')+1] + '\n'
+            if host_line not in hosts:
+                # this code has quadratic complexity. But so few lines, not worth fiddling with set/dict
+                hosts.append(host_line)
 
 # Get other bits of existing manifest
 bits1 = []
