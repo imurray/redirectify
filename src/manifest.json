@@ -25,6 +25,7 @@
     "*://pdfs.semanticscholar.org/*",
     "*://*.biorxiv.org/content*",
     "*://indico.cern.ch/event/*/attachments/*.pdf",
+    "*://indico.fnal.gov/event/*/attachments/*.pdf",
     "*://cds.cern.ch/record/*/files/*.pdf",
     "webRequest",
     "webRequestBlocking"
