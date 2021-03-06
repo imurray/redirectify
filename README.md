@@ -9,7 +9,7 @@ do what I want.
 
 Install links: [Firefox](https://addons.mozilla.org/en-US/firefox/addon/redirectify/) and [Chrome](https://chrome.google.com/webstore/detail/redirectify/mhjmbfadcbhilcfdhkkepffbnjaghfie)
 
-After installing this extension, links to PDFs on ACM, arXiv, JMLR, NIPS,
+After installing this extension, links to PDFs on ACM, arXiv, JMLR, NeurIPS,
 OpenReview, PMLR and Semantic Scholar redirect to an HTML index page, unless you
 clicked on the link from the main site. Examples:
 
@@ -17,7 +17,7 @@ clicked on the link from the main site. Examples:
 * arXiv: [this pdf link](https://arxiv.org/pdf/1602.07527.pdf) redirects to [this webpage](https://arxiv.org/abs/1602.07527)
 * bioRxiv: [this pdf link](https://www.biorxiv.org/content/biorxiv/early/2017/09/18/113480.full.pdf) redirects to [this webpage](https://www.biorxiv.org/content/early/2017/09/18/113480)
 * JMLR: [this pdf link](http://www.jmlr.org/papers/volume17/16-272/16-272.pdf) redirects to [this webpage](http://www.jmlr.org//papers/v17/16-272.html)
-* NIPS: [this pdf link](https://papers.nips.cc/paper/6084-fast-free-inference-of-simulation-models-with-bayesian-conditional-density-estimation.pdf) redirects to [this webpage](https://papers.nips.cc/paper/6084-fast-free-inference-of-simulation-models-with-bayesian-conditional-density-estimation)
+* NeurIPS: [this old-style pdf link](https://papers.nips.cc/paper/6084-fast-free-inference-of-simulation-models-with-bayesian-conditional-density-estimation.pdf) redirects to [this webpage](https://papers.nips.cc/paper/6084-fast-free-inference-of-simulation-models-with-bayesian-conditional-density-estimation). And [this new-style pdf link](https://papers.neurips.cc/paper/2016/file/6aca97005c68f1206823815f66102863-Paper.pdf) redirects to [this webpage](https://papers.neurips.cc/paper/2016/hash/6aca97005c68f1206823815f66102863-Abstract.html).
 * OpenReview: [this pdf link](https://openreview.net/pdf?id=rkdU7tCaZ) redirects to [this webpage](https://openreview.net/forum?id=rkdU7tCaZ)
 * PMLR: [this pdf link](http://proceedings.mlr.press/v9/murray10a/murray10a.pdf) redirects to [this webpage](http://proceedings.mlr.press/v9/murray10a.html)
 * Semantic Scholar: [this pdf link](https://pdfs.semanticscholar.org/2a72/6fc0ea9fd9206b0fc08e69a3ebbdb9aedbcb.pdf) redirects to [this webpage](https://www.semanticscholar.org/paper/Comparing-Topic-Models-for-a-Movie-Recommendation-Bergamaschi-Po/2a726fc0ea9fd9206b0fc08e69a3ebbdb9aedbcb)

@@ -25,7 +25,10 @@ RULES = [
   ["*://*.jmlr.org/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://jmlr.csail.mit.edu/papers/*.pdf", /\/papers\/volume(.*)\/[^\/]*\.pdf$/, '/papers/v$1.html'],
   ["*://dl.acm.org/doi/pdf/*", /.*\/doi\/pdf\/([^\?#]*).*/, 'https://dl.acm.org/doi/$1', ['.acm.org']],
-  ["*://papers.nips.cc/*.pdf", /\.pdf$/, ''],
+  ["*://papers.nips.cc/*/file/*.pdf", /(paper\/[^\/]*)\.pdf$/, '$1'],
+  ["*://papers.nips.cc/*.pdf", /(.*)\/file\/(.*)-Paper.pdf$/, '$1/hash/$2-Abstract.html'],
+  ["*://papers.neurips.cc/*/file/*.pdf", /(paper\/[^\/]*)\.pdf$/, '$1'],
+  ["*://papers.neurips.cc/*.pdf", /(.*)\/file\/(.*)-Paper.pdf$/, '$1/hash/$2-Abstract.html'],
   ["*://pdfs.semanticscholar.org/*", /.*lar.org\/([0-9a-f]{4})\/([0-9a-f]{36}).pdf/, 'https://www.semanticscholar.org/paper/$1$2',
     ['.semanticscholar.org']],
   ["*://*.biorxiv.org/content*", /((.*\/)biorxiv\/|)(.*)(\.full\.pdf)(\?.*)?$/, '$2$3']
