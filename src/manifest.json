@@ -10,6 +10,7 @@
 
   "permissions": [
     "*://*.arxiv.org/pdf/*",
+    "*://*.inspirehep.net/*",
     "*://xxx.lanl.gov/pdf/*",
     "*://arxiv-export-lb.library.cornell.edu/pdf/*",
     "*://arxiv.org/ftp/*pdf",
@@ -18,11 +19,13 @@
     "*://*.jmlr.org/papers/*.pdf",
     "*://jmlr.csail.mit.edu/papers/*.pdf",
     "*://dl.acm.org/doi/pdf/*",
+    "*://*.acm.org/*",
     "*://papers.nips.cc/*.pdf",
     "*://papers.neurips.cc/*.pdf",
     "*://proceedings.nips.cc/*.pdf",
     "*://proceedings.neurips.cc/*.pdf",
     "*://pdfs.semanticscholar.org/*",
+    "*://*.semanticscholar.org/*",
     "*://*.biorxiv.org/content*",
     "*://indico.cern.ch/event/*/attachments/*.pdf",
     "*://indico.fnal.gov/event/*/attachments/*.pdf",
