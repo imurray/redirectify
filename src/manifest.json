@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Redirectify",
-  "version": "0.3.0",
+  "version": "0.3.1",
 
   "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages.",
 
@@ -18,10 +18,10 @@
     "*://*.jmlr.org/papers/*.pdf",
     "*://jmlr.csail.mit.edu/papers/*.pdf",
     "*://dl.acm.org/doi/pdf/*",
-    "*://papers.nips.cc/*/file/*.pdf",
     "*://papers.nips.cc/*.pdf",
-    "*://papers.neurips.cc/*/file/*.pdf",
     "*://papers.neurips.cc/*.pdf",
+    "*://proceedings.nips.cc/*.pdf",
+    "*://proceedings.neurips.cc/*.pdf",
     "*://pdfs.semanticscholar.org/*",
     "*://*.biorxiv.org/content*",
     "*://indico.cern.ch/event/*/attachments/*.pdf",
