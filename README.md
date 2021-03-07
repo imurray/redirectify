@@ -24,7 +24,7 @@ from the main site.
 * NeurIPS: [this old-style pdf link](https://papers.nips.cc/paper/6084-fast-free-inference-of-simulation-models-with-bayesian-conditional-density-estimation.pdf) redirects to [this webpage](https://papers.nips.cc/paper/6084-fast-free-inference-of-simulation-models-with-bayesian-conditional-density-estimation). And [this new-style pdf link](https://papers.neurips.cc/paper/2016/file/6aca97005c68f1206823815f66102863-Paper.pdf) redirects to [this webpage](https://papers.neurips.cc/paper/2016/hash/6aca97005c68f1206823815f66102863-Abstract.html).
 * OpenReview: [this pdf link](https://openreview.net/pdf?id=rkdU7tCaZ) redirects to [this webpage](https://openreview.net/forum?id=rkdU7tCaZ)
 * PMLR: [this pdf link](http://proceedings.mlr.press/v9/murray10a/murray10a.pdf) redirects to [this webpage](http://proceedings.mlr.press/v9/murray10a.html)
-* Project Euclid: [this pdf link](https://projecteuclid.org/download/pdfview_1/euclid.ba/1480129463) redirects to [this webpage](https://projecteuclid.org/euclid.ba/1480129463). (Supporting URLs containing `Download?urlid=` turned out to be complicated. I may have to remove those rules if the cause too many issues.)
+* Project Euclid: [this pdf link](https://projecteuclid.org/download/pdfview_1/euclid.ba/1480129463) redirects to [this webpage](https://projecteuclid.org/euclid.ba/1480129463). (Supporting URLs containing `Download?urlid=` turned out to be complicated. I may have to remove those rules if they cause too many issues.)
 * Research Gate: [this pdf link](https://www.researchgate.net/profile/Freek_Stulp/publication/268382567_Path_Integral_Reinforcement_Learning/links/5565ab6208ae94e957207459/Path-Integral-Reinforcement-Learning.pdf) redirects to [this webpage](https://www.researchgate.net/publication/268382567_Path_Integral_Reinforcement_Learning)
 * Semantic Scholar: [this pdf link](https://pdfs.semanticscholar.org/2a72/6fc0ea9fd9206b0fc08e69a3ebbdb9aedbcb.pdf) redirects to [this webpage](https://www.semanticscholar.org/paper/Comparing-Topic-Models-for-a-Movie-Recommendation-Bergamaschi-Po/2a726fc0ea9fd9206b0fc08e69a3ebbdb9aedbcb)
 
@@ -43,6 +43,9 @@ sites:
 
 * [Redirectify for Chrome](https://chrome.google.com/webstore/detail/redirectify/mhjmbfadcbhilcfdhkkepffbnjaghfie)
 
+At the time of writing, it's possible but
+[a bit of a pain to install on Firefox for Android (nightly)](https://blog.mozilla.org/addons/2020/09/29/expanded-extension-support-in-firefox-for-android-nightly/).
+
 
 ## Alternatives
 
@@ -58,15 +61,14 @@ sites:
 
 And see the forks of this Github repo.
 
+
 ## Hacking
 
 The code is written as a WebExtension, originally for Firefox, but it also works
 in Chrome too. As of 2021 it seems to work correctly in Chrome, whereas
-originally bugs in Chrome made the experience worse. At the time of writing, it's
-possible but [a bit of a pain to install on Firefox for Android
-(nightly)](https://blog.mozilla.org/addons/2020/09/29/expanded-extension-support-in-firefox-for-android-nightly/).
-The extension could probably be made to work in some other browsers, perhaps
-with some tweaking. But not by me.
+originally bugs in Chrome made the experience worse. The extension could
+probably be made to work in some other browsers, perhaps with some tweaking. But
+not by me.
 
 If you want to add to the redirect rules, you currently have to edit the source
 code. To run the extension from the source:
