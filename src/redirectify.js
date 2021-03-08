@@ -17,7 +17,7 @@
 
 RULES = [
   ["*://*.arxiv.org/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2', ['.inspirehep.net']],
-  ["*://xxx.lanl.gov/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
+  ["*://xxx.lanl.gov/*", /.*xxx\.lanl\.gov\/(.*)/, 'https://arxiv.org/$1'],
   ["*://arxiv-export-lb.library.cornell.edu/pdf/*", /(.*)\/pdf\/(.*?)(\.pdf)?$/, '$1/abs/$2'],
   ["*://arxiv.org/ftp/*pdf", /.*arxiv()\/papers\/....\/(.*)\.pdf|.*\/([^\/]*\/)papers\/....\/([^.]*)\.pdf.*/, 'https://arxiv.org/abs/$1$2$3$4'],
   ["*://*.openreview.net/pdf*", /pdf\?id=/, 'forum?id='],

@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Redirectify",
-  "version": "0.3.1",
+  "version": "0.3.2",
 
   "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages.",
 
@@ -11,7 +11,7 @@
   "permissions": [
     "*://*.arxiv.org/pdf/*",
     "*://*.inspirehep.net/*",
-    "*://xxx.lanl.gov/pdf/*",
+    "*://xxx.lanl.gov/*",
     "*://arxiv-export-lb.library.cornell.edu/pdf/*",
     "*://arxiv.org/ftp/*pdf",
     "*://*.openreview.net/pdf*",
