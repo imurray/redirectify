@@ -35,7 +35,7 @@ RULES = [
   ["*://indico.cern.ch/event/*/attachments/*.pdf", /(.*\/[a-z]*\/.*)\/attachments\/.*/, '$1'],
   ["*://indico.fnal.gov/event/*/attachments/*.pdf", /(.*\/[a-z]*\/.*)\/attachments\/.*/, '$1'],
   ["*://cds.cern.ch/record/*/files/*.pdf", /(.*\/files\/).*\.pdf(|;|\?.*)$/, '$1'],
-  ["*://www.jstor.org/stable/pdf/*", /\/stable\/pdf\/([0-9]*)\.pdf.*/, '/stable/$1'],
+  ["*://www.jstor.org/stable/pdf/*", /\/stable\/pdf\/(.*)\.pdf.*/, '/stable/$1'],
   ["*://*.projecteuclid.org/download/pdf*", /\/download\/pdf[^\/]*(\/euclid\.[a-z]*\/[0-9]*).*/, '$1'],
   ["*://*.projecteuclid.org/*/Download*", /%2F/g, '/'],
   ["*://*.projecteuclid.org/*/Download*", /.*\/Download\?.*urlid=([a-z][^%&]*)(|&.*)$/, 'https://projecteuclid.org/euclid.$1'],
