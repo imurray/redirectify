@@ -1,0 +1,142 @@
+[
+  {
+    "permits": "*.arxiv.org",
+    "pattern": "^(https?://(.*\\.)?arxiv\\.org)/pdf/(.*?)(\\.pdf)?$",
+    "replace": "\\1/abs/\\3",
+    "exclude": "inspirehep.net"
+  },
+  {
+    "permits": "xxx.lanl.gov",
+    "pattern": "^https?://xxx\\.lanl\\.gov/(.*)",
+    "replace": "https://arxiv.org/\\1"
+  },
+  {
+    "permits": "arxiv-export-lb.library.cornell.edu",
+    "pattern": "^(https?://arxiv-export-lb\\.library\\.cornell\\.edu)/pdf/(.*?)(\\.pdf)?",
+    "replace": "\\1/abs/\\2"
+  },
+  {
+    "comment": "Rarely-used arXiv /ftp/ URLs",
+    "permits": "arxiv.org",
+    "pattern": "^https?://arxiv\\.org/ftp/(arxiv/papers/..../(.*)|([^/]*/)papers/..../([^.]*))\\.pdf.*",
+    "replace": "https://arxiv.org/abs/\\2\\3\\4"
+  },
+  {
+    "permits": "openreview.net",
+    "pattern": "^(https?://openreview\\.net/)pdf\\?id=(.*)",
+    "replace": "\\1forum?id=\\2"
+  },
+  {
+    "permits": "proceedings.mlr.press",
+    "pattern": "^(https?://proceedings\\.mlr\\.press/([^/]*)/)([^/]*/|)([^/]*?)(-supp|Supple|)\\.pdf",
+    "replace": "\\1\\4.html"
+  },
+  {
+    "permits": [
+      "*.jmlr.org",
+      "jmlr.csail.mit.edu"
+    ],
+    "pattern": "^(https?://((.*\\.)?jmlr\\.org|jmlr\\.csail\\.mit\\.edu)/papers/v)olume(.*)/[^/]*\\.pdf$",
+    "replace": "\\1\\4.html"
+  },
+  {
+    "permits": [
+      "dl.acm.org",
+      "dlnext.acm.org"
+    ],
+    "pattern": "^(https?://dl(next)?\\.acm\\.org/doi/)pdf/([^\\?#]*).*",
+    "replace": "\\1\\3"
+  },
+  {
+    "permits": [
+      "papers.nips.cc",
+      "papers.neurips.cc",
+      "proceedings.nips.cc",
+      "proceedings.neurips.cc"
+    ],
+    "pattern": "^(https?://(papers|proceedings)\\.(nips|neurips)\\.cc/paper/.*/)file(/.*)-Paper\\.pdf",
+    "replace": "\\1hash\\4-Abstract.html"
+  },
+  {
+    "permits": "pdfs.semanticscholar.org",
+    "pattern": "^(https?://)pdfs(\\.semanticscholar\\.org/)([0-9a-f]{4})/([0-9a-f]*)\\.pdf",
+    "replace": "\\1www\\2paper/\\3\\4",
+    "exclude": [
+      "semanticscholar.org"
+    ]
+  },
+  {
+    "permits": [
+      "www.biorxiv.org",
+      "www.medrxiv.org"
+    ],
+    "pattern": "^(https?://www\\.(bio|med)rxiv\\.org/content.*)(\\.full\\.pdf)(\\?.*)?",
+    "replace": "\\1"
+  },
+  {
+    "permits": [
+      "indico.cern.ch",
+      "indico.fnal.gov"
+    ],
+    "pattern": "^(https?://indico\\.(cern\\.ch|fnal\\.gov)/event/.*)/attachments/.*\\.pdf",
+    "replace": "\\1"
+  },
+  {
+    "permits": "cds.cern.ch",
+    "pattern": "^(https?://cds\\.cern\\.ch/record/[0-9]*/files/).*\\.pdf(|;|\\?.*)$",
+    "replace": "\\1"
+  },
+  {
+    "permits": "www.jstor.org",
+    "pattern": "^(https?://www\\.jstor\\.org/stable)/pdf(/.*)\\.pdf(|;|\\?.*)$",
+    "replace": "\\1\\2"
+  },
+  {
+    "comment": "projecteuclid.org/download/pdf URLs. This rule should just work.",
+    "permits": "*.projecteuclid.org",
+    "pattern": "^(https?://(.*\\.)?projecteuclid\\.org)/download/pdf[^/]*(/euclid\\.[a-z]*/[0-9]*).*",
+    "replace": "\\1\\3"
+  },
+  {
+    "comment": "Replace %2F with / in /Download URLs to make later redirect rules work",
+    "permits": "*.projecteuclid.org",
+    "pattern": "^(https?://(.*\\.)?projecteuclid\\.org/.*/Download.*)%2F(.*)",
+    "replace": "\\1/\\3"
+  },
+  {
+    "comment": "/Download URLs where index page is guessable. Requires earlier %2F -> / rule.",
+    "permits": "*.projecteuclid.org",
+    "pattern": "^https?://(.*\\.)?projecteuclid\\.org/.*/Download\\?.*urlid=([a-z][^%&]*)(|&.*)$",
+    "replace": "https://projecteuclid.org/euclid.\\2"
+  },
+  {
+    "comment": "Bounce remaining /Download URLs off doi.org (often doesn't return to projecteuclid though). Requires earlier %2F -> / rule.",
+    "permits": "*.projecteuclid.org",
+    "pattern": "^https?://(.*\\.)?projecteuclid\\.org/.*/Download\\?.*urlid=([^%&]*)(|&.*)$",
+    "replace": "https://doi.org/\\2"
+  },
+  {
+    "comment": "Fixes some broken DOI redirects, e.g., https://doi.org/10.2996/kmj/1138036064",
+    "permits": "*.projecteuclid.org",
+    "pattern": "^(https?://(.*\\.)?projecteuclid\\.org/)getRecord\\?id=(euclid.*)",
+    "replace": "\\1\\3"
+  },
+  {
+    "permits": "www.researchgate.net",
+    "pattern": "^(https?://www\\.researchgate\\.net)/profile/[^/]*(/publication/[^/]*).*",
+    "replace": "\\1\\2"
+  },
+  {
+    "permits": [
+      "citeseer.ist.psu.edu",
+      "citeseerx.ist.psu.edu"
+    ],
+    "pattern": "^(https?://citeseerx?\\.ist\\.psu\\.edu/viewdoc/)download.*(doi=[^&]*).*",
+    "replace": "\\1/summary?\\2"
+  },
+  {
+    "permits": "www.aclweb.org",
+    "pattern": "^(https?://www\\.aclweb\\.org/anthology/[A-Z0-9]*-[0-9]*)\\.pdf",
+    "replace": "\\1"
+  }
+]

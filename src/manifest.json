@@ -1,49 +1,56 @@
 {
 
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Redirectify",
-  "version": "0.3.2",
+  "version": "0.4.0",
 
   "description": "Redirects requests for PDFs of papers at some popular sites to their corresponding HTML index pages.",
 
   "homepage_url": "https://github.com/imurray/redirectify",
 
+  "icons": {
+    "128": "r.png"
+  },
+
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "redirectify_ruleset",
+      "enabled": true,
+      "path": "dnr_rules.json"
+    }]
+  },
+
   "permissions": [
-    "*://*.arxiv.org/pdf/*",
-    "*://*.inspirehep.net/*",
-    "*://xxx.lanl.gov/*",
-    "*://arxiv-export-lb.library.cornell.edu/pdf/*",
-    "*://arxiv.org/ftp/*pdf",
-    "*://*.openreview.net/pdf*",
-    "*://proceedings.mlr.press/*.pdf",
-    "*://*.jmlr.org/papers/*.pdf",
-    "*://jmlr.csail.mit.edu/papers/*.pdf",
-    "*://dl.acm.org/doi/pdf/*",
-    "*://*.acm.org/*",
-    "*://papers.nips.cc/*.pdf",
-    "*://papers.neurips.cc/*.pdf",
-    "*://proceedings.nips.cc/*.pdf",
-    "*://proceedings.neurips.cc/*.pdf",
-    "*://pdfs.semanticscholar.org/*",
-    "*://*.semanticscholar.org/*",
-    "*://*.biorxiv.org/content*",
-    "*://indico.cern.ch/event/*/attachments/*.pdf",
-    "*://indico.fnal.gov/event/*/attachments/*.pdf",
-    "*://cds.cern.ch/record/*/files/*.pdf",
-    "*://www.jstor.org/stable/pdf/*",
-    "*://*.projecteuclid.org/download/pdf*",
-    "*://*.projecteuclid.org/*/Download*",
-    "*://*.projecteuclid.org/getRecord?id=euclid.*",
-    "*://www.researchgate.net/profile/*pdf",
-    "*://citeseer.ist.psu.edu/viewdoc/download*type=pdf",
-    "*://citeseerx.ist.psu.edu/viewdoc/download*type=pdf",
-    "*://www.aclweb.org/anthology/*.pdf",
-    "webRequest",
-    "webRequestBlocking"
+    "declarativeNetRequest"
   ],
 
-  "background": {
-    "scripts": ["redirectify.js"]
-  }
+  "host_permissions": [
+    "*://*.arxiv.org/*",
+    "*://xxx.lanl.gov/*",
+    "*://arxiv-export-lb.library.cornell.edu/*",
+    "*://arxiv.org/*",
+    "*://openreview.net/*",
+    "*://proceedings.mlr.press/*",
+    "*://*.jmlr.org/*",
+    "*://jmlr.csail.mit.edu/*",
+    "*://dl.acm.org/*",
+    "*://dlnext.acm.org/*",
+    "*://papers.nips.cc/*",
+    "*://papers.neurips.cc/*",
+    "*://proceedings.nips.cc/*",
+    "*://proceedings.neurips.cc/*",
+    "*://pdfs.semanticscholar.org/*",
+    "*://www.biorxiv.org/*",
+    "*://www.medrxiv.org/*",
+    "*://indico.cern.ch/*",
+    "*://indico.fnal.gov/*",
+    "*://cds.cern.ch/*",
+    "*://www.jstor.org/*",
+    "*://*.projecteuclid.org/*",
+    "*://www.researchgate.net/*",
+    "*://citeseer.ist.psu.edu/*",
+    "*://citeseerx.ist.psu.edu/*",
+    "*://www.aclweb.org/*"
+  ]
 
 }

@@ -1,5 +1,15 @@
 # Redirectify
 
+> :warning: **You are looking at an experimental branch.** This branch supports
+> the next version of Chrome's extensions system:
+> [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/),
+> which requires the new
+> [declarativeNetRequest API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
+> It seems to work in Chrome, but I will wait a while for the new extensions
+> system to settle in before publishing it. I intend to update the Firefox
+> extension to use the same `src/rules.json` and make this the main branch when
+> it's ready.
+
 Links to academic papers in emails and on websites often point to the PDF of the
 paper. However, on sites like [arXiv](https://arxiv.org/), I'd much rather be
 pointed to the HTML page. The index page is quick to load, and has meta-data not
@@ -28,16 +38,16 @@ from the main site.
 * Research Gate: [this pdf link](https://www.researchgate.net/profile/Freek_Stulp/publication/268382567_Path_Integral_Reinforcement_Learning/links/5565ab6208ae94e957207459/Path-Integral-Reinforcement-Learning.pdf) redirects to [this webpage](https://www.researchgate.net/publication/268382567_Path_Integral_Reinforcement_Learning)
 * Semantic Scholar: [this pdf link](https://pdfs.semanticscholar.org/2a72/6fc0ea9fd9206b0fc08e69a3ebbdb9aedbcb.pdf) redirects to [this webpage](https://www.semanticscholar.org/paper/Comparing-Topic-Models-for-a-Movie-Recommendation-Bergamaschi-Po/2a726fc0ea9fd9206b0fc08e69a3ebbdb9aedbcb)
 
-I gave the extension a fairly generic name. The redirect rules are stored in
-a list at the top of the code, and can easily be added to. However, making this
-list updatable within the extension is unlikely to happen soon, partly because
-of time, partly because allowing any URL to be redirected opens up security issues.
+I gave the extension a fairly generic name, because I'd like to make it easy for
+users to choose and add any redirect rules of their own. However, I haven't
+managed to find time for that yet. The redirect rules are stored in
+`src/rules.json`, and developers can easily add to them (see below).
 
 
 ## Download
 
-If you just want to use the extension as it is, get it from one of the official addon
-sites:
+If you just want to use the last release of the extension, get it from one of
+the official addon sites:
 
 * [Redirectify for Firefox](https://addons.mozilla.org/en-US/firefox/addon/redirectify/)
 
@@ -64,32 +74,30 @@ And see the forks of this Github repo.
 
 ## Hacking
 
-The code is written as a WebExtension, originally for Firefox, but it also works
-in Chrome too. As of 2021 it seems to work correctly in Chrome, whereas
-originally bugs in Chrome made the experience worse. The extension could
-probably be made to work in some other browsers, perhaps with some tweaking. But
-not by me.
+Currently this branch only supports Chrome (I mainly use Firefox, but this
+branch is about supporting Chrome after Manifest V2 support is dropped).
+However, I fully intend to unify this code with Firefox support soon.
 
-If you want to add to the redirect rules, you currently have to edit the source
-code. To run the extension from the source:
+To work on the extension:
 
-* Firefox: go to `about:debugging` and click "Load Temporary Add-on".
-  Select either of the files in the `src` directory. See [Mozilla's
-  WebExtensions documentation](https://developer.mozilla.org/en-US/Add-ons/WebExtensions)
-  for more details.
+* Edit the rules in `src/rules.json`
 
-* Chrome: go to `chrome://extensions` check developer mode, click load
-  unpacked extension and select the `src` directory. See [Chrome's
-  extension development getting started
+* The `src/compile_rules.py` script updates `src/manifest.json` in place, and
+  builds `src/dnr_rules.json`
+
+* To try out your changes, go to `chrome://extensions`, check
+  developer mode, click load unpacked extension and select the `src`
+  directory. See [Chrome's extension development getting started
   guide](https://developer.chrome.com/extensions/getstarted) for more
-  details. At the moment what I actually deploy is the version in
-  `tmp_chrome_version` after running `./package.sh`. At packaging time I remove
-  handling of sites that don't work as intended in Chrome yet.
+  details.
 
-Pull requests providing new rules, fixes, or improvements are welcome, as are
-github issues (include example URLs demonstrating what you want). Although
-experience suggests I might take ages to look at them; sorry. If proposing
-code, please check both of the following in both Firefox and Chrome:
+Experience suggests I might take ages to look at proposed changes; sorry. I
+don't want to pester 100s of people with permissions warnings very often, so I
+will delay adding support for new sites until the next major update. Eventually
+I hope to make the rules configurable, opt-in, and use optional permissions.
+But it will take a while before I get around to it.
+
+If proposing code, please check both of the following:
 
 * Requests for PDFs from external sites or the location bar are redirected.
 
@@ -97,8 +105,5 @@ code, please check both of the following in both Firefox and Chrome:
   that link does give the PDF.
 
 If you add support for a new site, please add an example PDF URL to `test_cases`.
-
-At some point in 2021, before Google lock things down, I should probably make a
-version of the extension that can use Chrome's new Manifest 3 API. It looks
-possible. As I use Firefox, I haven't got around to it yet.
+Thanks!
 

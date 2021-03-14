@@ -2,5 +2,10 @@
 *.xpi
 *.zip
 
-# temporary chrome thing
+# temporary directories for building package
 *tmp_*/
+
+# entirely generated files
+src/_metadata
+src/dnr_rules.json
+
