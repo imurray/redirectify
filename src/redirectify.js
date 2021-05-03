@@ -44,7 +44,7 @@ RULES = [
   ["*://www.researchgate.net/profile/*pdf", /\/profile\/[^\/]*(\/publication\/[^\/]*).*/, '$1'],
   ["*://citeseer.ist.psu.edu/viewdoc/download*type=pdf", /\/download.*(doi=[^&]*).*/, '/summary?$1'],
   ["*://citeseerx.ist.psu.edu/viewdoc/download*type=pdf", /\/download.*(doi=[^&]*).*/, '/summary?$1'],
-  ["*://www.aclweb.org/anthology/*.pdf", /(\/anthology\/[A-Z0-9]*-[0-9]*)\.pdf/, '$1']
+  ["*://www.aclweb.org/anthology/*.pdf", /(\/anthology\/.*)\.pdf/, '$1']
 ];
 
 // 2021-03-06
