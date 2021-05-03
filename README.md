@@ -4,7 +4,7 @@
 > the next version of Chrome's extensions system:
 > [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/),
 > which requires the new
-> [declarativeNetRequest API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/)
+> [declarativeNetRequest API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/).
 > It seems to work in Chrome, but I will wait a while for the new extensions
 > system to settle in before publishing it. I intend to update the Firefox
 > extension to use the same `src/rules.json` and make this the main branch when

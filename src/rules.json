@@ -136,7 +136,7 @@
   },
   {
     "permits": "www.aclweb.org",
-    "pattern": "^(https?://www\\.aclweb\\.org/anthology/[A-Z0-9]*-[0-9]*)\\.pdf",
+    "pattern": "^(https?://www\\.aclweb\\.org/anthology/.*)\\.pdf",
     "replace": "\\1"
   }
 ]
