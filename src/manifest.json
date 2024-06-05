@@ -50,7 +50,9 @@
     "*://www.researchgate.net/*",
     "*://citeseer.ist.psu.edu/*",
     "*://citeseerx.ist.psu.edu/*",
-    "*://www.aclweb.org/*"
+    "*://www.aclweb.org/*",
+    "*://aclanthology.org/*",
+    "*://journals.aps.org/*"
   ]
 
 }

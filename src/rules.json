@@ -54,7 +54,7 @@
       "proceedings.nips.cc",
       "proceedings.neurips.cc"
     ],
-    "pattern": "^(https?://(papers|proceedings)\\.(nips|neurips)\\.cc/paper/.*/)file(/.*)-Paper\\.pdf",
+    "pattern": "^(https?://(papers|proceedings)\\.(nips|neurips)\\.cc/.*paper/.*/)file(/.*)-Paper\\.pdf",
     "replace": "\\1hash\\4-Abstract.html"
   },
   {
@@ -131,12 +131,22 @@
       "citeseer.ist.psu.edu",
       "citeseerx.ist.psu.edu"
     ],
-    "pattern": "^(https?://citeseerx?\\.ist\\.psu\\.edu/viewdoc/)download.*(doi=[^&]*).*",
+    "pattern": "^(https?://CITESEER_SUPPORT_BROKENciteseerx?\\.ist\\.psu\\.edu/viewdoc/)download.*(doi=[^&]*).*",
     "replace": "\\1/summary?\\2"
   },
   {
     "permits": "www.aclweb.org",
     "pattern": "^(https?://www\\.aclweb\\.org/anthology/.*)\\.pdf",
     "replace": "\\1"
+  },
+  {
+    "permits": "aclanthology.org",
+    "pattern": "^(https?://aclanthology\\.org/.*)\\.pdf",
+    "replace": "\\1/"
+  },
+  {
+    "permits": "journals.aps.org",
+    "pattern": "^(https?://journals.aps.org/.*)/pdf/",
+    "replace": "\\1/abstract/"
   }
 ]
