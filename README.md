@@ -1,5 +1,9 @@
 # Redirectify
 
+> :warning: **The Chrome version of this extension is currently in a [separate branch for Chrome](https://github.com/imurray/redirectify/tree/manifest3).**
+> This branch is for the Firefox version.
+> In theory I intend to unify the two versions, but no promises if/when I'll find the time.
+
 Links to academic papers in emails and on websites often point to the PDF of the
 paper. However, on sites like [arXiv](https://arxiv.org/), I'd much rather be
 pointed to the HTML page. The index page is quick to load, and has meta-data not
@@ -43,8 +47,10 @@ sites:
 
 * [Redirectify for Chrome](https://chrome.google.com/webstore/detail/redirectify/mhjmbfadcbhilcfdhkkepffbnjaghfie)
 
-At the time of writing, it's possible but
-[a bit of a pain to install on Firefox for Android (nightly)](https://blog.mozilla.org/addons/2020/09/29/expanded-extension-support-in-firefox-for-android-nightly/).
+Until the branches are unified, the Chome and Firefox versions are likely to offer a slightly different set of redirects.
+The Firefox version should work in Firefox for Android. It used to be
+[a bit of a pain to install Firefox extensions on Android](https://blog.mozilla.org/addons/2020/09/29/expanded-extension-support-in-firefox-for-android-nightly/),
+but may be easier now.
 
 
 ## Alternatives
@@ -64,11 +70,12 @@ And see the forks of this Github repo.
 
 ## Hacking
 
-The code is written as a WebExtension, originally for Firefox, but it also works
-in Chrome too. As of 2021 it seems to work correctly in Chrome, whereas
-originally bugs in Chrome made the experience worse. The extension could
-probably be made to work in some other browsers, perhaps with some tweaking. But
-not by me.
+The code is written as a WebExtension for Firefox. It did work in Chrome, but
+Google are pulling support for the API it uses.
+There's currently a [separate branch for Chrome](https://github.com/imurray/redirectify/tree/manifest3).
+My intention is to move back towards a single code-base, but I want to wait for
+Mozilla to settle on what their manifest v3 support will be, and I may not find
+the time.
 
 If you want to add to the redirect rules, you currently have to edit the source
 code. To run the extension from the source:
@@ -78,18 +85,9 @@ code. To run the extension from the source:
   WebExtensions documentation](https://developer.mozilla.org/en-US/Add-ons/WebExtensions)
   for more details.
 
-* Chrome: go to `chrome://extensions` check developer mode, click load
-  unpacked extension and select the `src` directory. See [Chrome's
-  extension development getting started
-  guide](https://developer.chrome.com/extensions/getstarted) for more
-  details. At the moment what I actually deploy is the version in
-  `tmp_chrome_version` after running `./package.sh`. At packaging time I remove
-  handling of sites that don't work as intended in Chrome yet.
+* Chrome: see the [separate branch for Chrome](https://github.com/imurray/redirectify/tree/manifest3)
 
-Pull requests providing new rules, fixes, or improvements are welcome, as are
-github issues (include example URLs demonstrating what you want). Although
-experience suggests I might take ages to look at them; sorry. If proposing
-code, please check both of the following in both Firefox and Chrome:
+If proposing code, please check both of the following:
 
 * Requests for PDFs from external sites or the location bar are redirected.
 
@@ -98,7 +96,9 @@ code, please check both of the following in both Firefox and Chrome:
 
 If you add support for a new site, please add an example PDF URL to `test_cases`.
 
-At some point in 2021, before Google lock things down, I should probably make a
-version of the extension that can use Chrome's new Manifest 3 API. It looks
-possible. As I use Firefox, I haven't got around to it yet.
+Experience suggests I might take ages to look at proposed changes; sorry.
+I don't want to pester 100s of people with permissions warnings, so I
+will delay adding support for new sites until I'm forced to make a major update (if ever).
+Eventually I hope to make the rules configurable, opt-in, and use optional permissions.
+But it's been years, and I haven't found the time to do it yet.
 
